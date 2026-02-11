@@ -25,4 +25,58 @@ API REST desarrollada con **FastAPI** que incluye:
 ---
 
 ## 🏗️ Estructura del Proyecto
+app/
+│── main.py
+│── database.py
+│
+├── models/
+│ └── user.py
+│
+├── schemas/
+│ └── auth.py
+│
+├── routers/
+│ └── auth.py
+│
+└── core/
+└── security.py
+
+---
+
+## 📌 Ejemplo de Schema (Login)
+
+```python
+# app/schemas/auth.py
+from pydantic import BaseModel, EmailStr
+
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str
+
+
+## Clonar repo
+git clone https://github.com/tuusuario/tu-repo.git
+cd tu-repo
+
+Crear entorno virtual
+python -m venv env
+
+Linux / 🍎 Mac
+source env/bin/activate
+
+Instalar dependencias
+pip install -r requirements.txt
+
+
+pip install fastapi uvicorn passlib[bcrypt] python-jose python-multipart sqlalchemy
+
+
+▶️ Ejecutar el Proyecto
+uvicorn app.main:app --reload
+
+
+http://127.0.0.1:8000
+
+
+
 
